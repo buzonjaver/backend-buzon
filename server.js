@@ -21,6 +21,8 @@ const transporter = nodemailer.createTransport({
 });
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 app.use((req, res, next) => {
     const origin = req.headers.origin || req.headers.referer || "";
